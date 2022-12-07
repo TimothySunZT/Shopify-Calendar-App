@@ -1,0 +1,63 @@
+<span style="color: {{ block.settings.color }}">
+  App blocks let you build powerful integrations with online store themes.
+</span>
+
+{% render "app_snippet" %}
+{% schema %}
+  {
+    "name": "My Calendar",
+    "target": "section",
+    "stylesheet": "app.css",
+    "javascript": "app.js",
+    "settings": [
+      {
+        "label": "Color",
+        "id": "color",
+        "type": "color",
+        "default": "#000000"
+      }, {
+        "type": "html",
+        "id": "video_embed",
+        "label": "Video embed"
+      }
+    ]
+  }
+{% endschema %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ 'style.css' | asset_url }}"/>
+  </head>
+  <body>
+    {% comment %} <div class="container"> {% endcomment %}
+      <div class="calendar">
+        <div class="month">
+          <ul>
+            <li class="prev">&#10094;</li>
+            <li class="next">&#10095;</li>
+            <div class="date">
+              <h1></h1>
+              <p></p>
+            </div>
+          </ul>
+        </div>
+
+        <div class="weekdays">
+          <li>Sunday</li>
+          <li>Monday</li>
+          <li>Tuesday</li>
+          <li>Wendsday</li>
+          <li>Thursday</li>
+          <li>Friday</li>
+          <li>Saturday</li>
+
+        </div>
+
+        <div class="days"></div>
+      </div>
+    {% comment %} </div> {% endcomment %}
+
+    <script src="{{ 'script.js' | asset_url }}" defer></script>
+  </body>
+</html>
