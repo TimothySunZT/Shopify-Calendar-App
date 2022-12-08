@@ -15,7 +15,7 @@ body {font-family: Verdana, sans-serif;}
 
 .calendar{
     width:45rem;
-    height:52rem;
+    height:62rem;
     box-shadow: 0 0.5rem 3rem rgba(0,0,0,0.4);
 }
 
@@ -63,7 +63,7 @@ body {font-family: Verdana, sans-serif;}
 
 .weekdays li {
   display: inline-block;
-  width: 13.6%;
+  width: 12.4%;
   color: #666;
   text-align: center;
 }
@@ -100,6 +100,13 @@ body {font-family: Verdana, sans-serif;}
 /* Highlight the current day */
 .today{
     background-color: #08f33b;
+}
+
+.specificTime li {
+  display: inline-block;
+  width: 12.4%;
+  color: #666;
+  text-align: center;
 }
 
 /* Add media queries for smaller screens */

@@ -78,4 +78,18 @@ document.querySelector('.next').addEventListener('click',()=>{
     renderCalendar();
 })
 
+// Click days to add product quantity
+document.querySelector('.days').addEventListener('click',()=>{
+    
+    document.getElementById("TEST for Click Days").innerHTML = '!!This is a test for click days!!';
+    document.getElementsByClassName("quantity__input").value+=1; // Maybe something like this? 
+    
+    //<input type="text" name="quantity" min="1" value="1"></input>
+    //querySelector++;
+    //renderCalendar();
+}) 
+
+
+
+
 renderCalendar();

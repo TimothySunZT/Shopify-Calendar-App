@@ -1,8 +1,6 @@
-<span style="color: {{ block.settings.color }}">
-  App blocks let you build powerful integrations with online store themes.
-</span>
+{% render "setTime" %}
 
-{% render "app_snippet" %}
+
 {% schema %}
   {
     "name": "My Calendar",
@@ -15,11 +13,24 @@
         "id": "color",
         "type": "color",
         "default": "#000000"
-      }, {
-        "type": "html",
-        "id": "video_embed",
-        "label": "Video embed"
+      },
+      {
+        "type": "text",
+        "id": "custom-text",
+        "label": "Specific time"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_with_text_image",
+        "label": "Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_announcement",
+        "label": "Show announcement",
+        "default": true
       }
+      
     ]
   }
 {% endschema %}
@@ -44,17 +55,51 @@
         </div>
 
         <div class="weekdays">
-          <li>Sunday</li>
-          <li>Monday</li>
-          <li>Tuesday</li>
-          <li>Wendsday</li>
-          <li>Thursday</li>
-          <li>Friday</li>
-          <li>Saturday</li>
+          <li>Sun</li>
+          <li>Mon</li>
+          <li>Tue</li>
+          <li>Wed</li>
+          <li>Thu</li>
+          <li>Fri</li>
+          <li>Sat</li>
+        </div>
+        <div class="days"></div>
 
+        <p id="TEST for Click Days"></p> {% comment %} This is a test to check if click days is working {% endcomment %}
+
+
+{% comment %}    This block suppose to change the line item quantity.     <p>
+          <label>Please let us know your favorite color</label>
+        
+          <input type="text" name="attributes[Favorite color]" value="{{ cart.attributes['Favorite color'] }}">
+        </p>
+        {% for item in cart.items %}
+          <!-- line item info -->
+        
+          {% unless item.properties == empty %}
+            {% for property in item.properties %}
+              {{ property.first }}:
+        
+              {% if property.last contains '/uploads/' %}
+                <a href="{{ property.last }}">{{ property.last | split: '/' | last }}</a>
+              {% else %}
+                {{ property.last }}
+              {% endif %}
+            {% endfor %}
+          {% endunless %}
+        {% endfor %} {% endcomment %}
+        
+        <div class="specificTime">
+          <li>9:00 am</li>
+          <li>10:00 am</li>
+          <li>11:00 am</li>
+          <li>12:00 am</li>
+          <li>1:00 pm</li>
+          <li>2:00 pm</li>
+          <li>3:00 pm</li>
         </div>
 
-        <div class="days"></div>
+          
       </div>
     {% comment %} </div> {% endcomment %}
 
